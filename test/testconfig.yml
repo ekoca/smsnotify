@@ -1,0 +1,44 @@
+users:
+  - name: "test"
+    phones:
+      - "+11231231212"
+      - "+11231231212"
+
+  - name: "test2"
+    phones:
+      - "+11231231212"
+      - "+11231231212"
+
+  - name: "ekoca"
+    phones:
+      - "11231231212"
+
+responders:
+  - name: "Istanbul"
+    users:
+      - "ekoca"
+      - "test"
+    commands:
+      - text: "stop istanbul"
+        name: "stopistanbul"
+        command: "script/stop.sh"
+        params: "-v --branch istanbul"
+
+      - text: "*"
+        command: "script/default.sh"
+        params: "-v -l"
+        name: "defaultistanbul"
+
+  - name: "Headquarters"
+    users:
+      - "ekoca"
+    commands:
+      - text: "stop"
+        name: "stophead"
+        command: "script/stop.sh"
+        params: "-v –-branch all"
+
+      - text: "*"
+        command: "/Users/ekoca/Development/smsnotify/test/send1.sh"
+        name: "defaulthead"
+        params: "-v -l"
